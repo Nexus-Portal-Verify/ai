@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💎</text></svg>">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PREMIUM HUB - DIGITAL ASSETS</title>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            --glass: rgba(255, 255, 255, 0.95);
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f172a;
+            background-image: radial-gradient(circle at top right, #1e1b4b, #0f172a);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+        .main-card {
+            background: var(--glass);
+            border-radius: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            width: 100%;
+            max-width: 480px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        .header-gradient {
+            background: var(--primary-gradient);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            color: white;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        .progress-bar-fill {
+            width: 0%;
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .status-badge {
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(4px);
+            border-radius: 50px;
+            padding: 4px 12px;
+            font-size: 10px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .pulse-green {
+            height: 8px; width: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 0 rgba(34, 197, 94, 0.4);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+        .locker-container {
+            display: none;
+            animation: slideUp 0.6s ease-out forwards;
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-card">
+    <!-- Header Section -->
+    <div class="header-gradient">
+        <div class="status-badge mb-4">
+            <span class="pulse-green"></span> SECURE SERVER ACTIVE
+        </div>
+        <h1 class="text-4xl font-black tracking-tighter mb-2 uppercase italic" style="font-family: 'Oswald';">ULTIMATE AI</h1>
+        <p class="text-indigo-100 text-sm font-medium">PROMPT ENGINEERING MASTERCLASS 2026</p>
+    </div>
+
+    <!-- Content Section -->
+    <div class="p-6 md:p-8">
+        <div id="file-box" class="space-y-4 mb-8">
+            <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-2xl border border-gray-100">
+                <div class="h-12 w-12 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 text-xl">
+                    <i class="fas fa-file-invoice"></i>
+                </div>
+                <div class="flex-1">
+                    <h3 class="text-sm font-bold text-gray-800 uppercase tracking-tight">Access_Vault_2026.zip</h3>
+                    <p class="text-xs text-gray-500">Premium Digital Resource • 12.4 MB</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 text-center">
+                <div class="bg-gray-50 p-3 rounded-xl border border-gray-100">
+                    <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Downloads</p>
+                    <p class="text-lg font-black text-gray-700">48.2K+</p>
+                </div>
+                <div class="bg-gray-50 p-3 rounded-xl border border-gray-100">
+                    <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Rating</p>
+                    <p class="text-lg font-black text-indigo-600">4.9/5.0</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sync Animation -->
+        <div id="sync-ui" class="hidden space-y-3 mb-8">
+            <div class="flex justify-between items-end">
+                <p class="text-[10px] font-black text-indigo-600 uppercase tracking-widest">Verifying Connection</p>
+                <p id="percent-text" class="text-xs font-bold text-gray-700">0%</p>
+            </div>
+            <div class="w-full bg-gray-100 h-3 rounded-full overflow-hidden">
+                <div id="sync-bar" class="progress-bar-fill h-full bg-indigo-600 rounded-full"></div>
+            </div>
+        </div>
+
+        <!-- MyLead Locker Injection Point -->
+        <div id="locker-inject" class="locker-container">
+            <div class="text-center mb-6">
+                <div class="inline-flex items-center gap-2 text-red-500 font-bold text-xs uppercase tracking-widest mb-2">
+                    <i class="fas fa-shield-alt"></i> Human Verification Required
+                </div>
+                <p class="text-xs text-gray-500">To maintain server speed, please complete one quick offer below to unlock the download link.</p>
+            </div>
+            
+            <!-- MyLead Code -->
+            <div id="cpa-locker-7700bcd6-5025-11f1-a48b-8a5fb7be40ea" class="rounded-xl overflow-hidden shadow-sm"></div>
+            <script type="text/javascript" id="cpljs-7700bcd6-5025-11f1-a48b-8a5fb7be40ea" src="https://bestlocker.eu/iframeLoader/7700bcd6-5025-11f1-a48b-8a5fb7be40ea"></script>
+        </div>
+
+        <!-- CTA Button -->
+        <button id="main-btn" onclick="initiateDownload()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-black py-5 rounded-2xl shadow-xl shadow-indigo-200 transition-all flex items-center justify-center gap-3 active:scale-95">
+            <span id="btn-label">GET ACCESS NOW</span>
+            <i class="fas fa-chevron-right text-xs"></i>
+        </button>
+
+        <p class="text-center mt-6 text-[10px] text-gray-400 font-medium uppercase tracking-tighter">
+            CloudFlare Verified Secure Gateway • <span id="user-ip">152.12.XX.XX</span>
+        </p>
+    </div>
+</div>
+
+<script>
+    function initiateDownload() {
+        const btn = document.getElementById('main-btn');
+        const btnLabel = document.getElementById('btn-label');
+        const syncUI = document.getElementById('sync-ui');
+        const syncBar = document.getElementById('sync-bar');
+        const percentText = document.getElementById('percent-text');
+        const locker = document.getElementById('locker-inject');
+        const fileBox = document.getElementById('file-box');
+
+        // Logic
+        btn.style.display = 'none';
+        fileBox.style.opacity = '0.4';
+        syncUI.classList.remove('hidden');
+
+        let width = 0;
+        const interval = setInterval(() => {
+            if (width >= 100) {
+                clearInterval(interval);
+                setTimeout(() => {
+                    syncUI.classList.add('hidden');
+                    locker.style.display = 'block';
+                }, 400);
+            } else {
+                width += Math.random() * 8;
+                if(width > 100) width = 100;
+                syncBar.style.width = width + '%';
+                percentText.innerText = Math.floor(width) + '%';
+            }
+        }, 120);
+    }
+
+    // Modern Random IP generator for trust
+    const randomIP = `${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}.XX.XX`;
+    document.getElementById('user-ip').innerText = randomIP;
+</script>
+
+</body>
+</html>
