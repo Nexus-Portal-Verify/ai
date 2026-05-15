@@ -1,29 +1,176 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Download Your PDF</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AI PROMPT PACK - EXCLUSIVE ACCESS</title>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f4f4f4; text-align: center; padding-top: 50px; }
-        .container { background: white; max-width: 400px; margin: auto; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h2 { color: #333; }
-        .loading-text { color: #888; font-size: 14px; margin-bottom: 10px; }
+        :root {
+            --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            --glass: rgba(255, 255, 255, 0.95);
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f172a;
+            background-image: radial-gradient(circle at top right, #1e1b4b, #0f172a);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+        .main-card {
+            background: var(--glass);
+            border-radius: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            width: 100%;
+            max-width: 480px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .header-gradient {
+            background: var(--primary-gradient);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            color: white;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        .progress-bar-fill {
+            width: 0%;
+            transition: width 0.2s linear;
+        }
+        /* Iframe එක සයිට් එකට ලස්සනට සෙට් වෙන්න දාපු CSS */
+        .mylead-iframe {
+            width: 100%;
+            height: 420px;
+            border: none;
+            border-radius: 1rem;
+            background: transparent;
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h2>Download Premium PDF</h2>
-    <p>Please complete the captcha below to start your download.</p>
-    
-    <div class="loading-text">Locker එක load වෙමින් පවතී... (පේන්නේ නැත්නම් VPN එකක් දාලා බලන්න)</div>
+<div class="main-card">
+    <!-- Header Section -->
+    <div class="header-gradient">
+        <div class="inline-flex items-center gap-2 bg-black/20 backdrop-blur-md rounded-full px-3 py-1 mb-4 text-[10px] font-bold">
+            <span class="h-2 w-2 bg-green-500 rounded-full animate-pulse"></span> SECURE DOWNLOAD NODE
+        </div>
+        <h1 class="text-4xl font-black tracking-tighter mb-2 uppercase italic" style="font-family: 'Oswald';">AI PROMPT PACK</h1>
+        <p class="text-indigo-100 text-sm font-medium">ULTIMATE MASTER PACK 2026</p>
+    </div>
 
-    <!-- START MYLEAD LOCKER CODE -->
-    <div id="cpa-locker-7700bcd6-5025-11f1-a48b-8a5fb7be40ea"></div>
-    <script type="text/javascript" id="cpljs-7700bcd6-5025-11f1-a48b-8a5fb7be40ea" src="https://bestlocker.eu/iframeLoader/7700bcd6-5025-11f1-a48b-8a5fb7be40ea"></script>
-    <!-- END MYLEAD LOCKER CODE -->
+    <!-- Content Section -->
+    <div class="p-6 md:p-8">
+        <!-- Info Box -->
+        <div id="file-box" class="space-y-4 mb-8">
+            <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-2xl border border-gray-100">
+                <div class="h-12 w-12 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 text-xl">
+                    <i class="fas fa-file-archive"></i>
+                </div>
+                <div class="flex-1">
+                    <h3 class="text-sm font-bold text-gray-800 uppercase tracking-tight">AI_Prompt_Vault_v3.zip</h3>
+                    <p class="text-xs text-gray-500">Premium Digital Resource • 18.5 MB</p>
+                </div>
+            </div>
 
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 gap-3 text-center">
+                <div class="bg-gray-50 p-3 rounded-xl border border-gray-100">
+                    <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Downloads</p>
+                    <p class="text-lg font-black text-gray-700">84.7K+</p>
+                </div>
+                <div class="bg-gray-50 p-3 rounded-xl border border-gray-100">
+                    <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">File Status</p>
+                    <p class="text-sm font-black text-green-600 uppercase mt-1">Verified Clean</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress/Sync UI -->
+        <div id="sync-ui" class="hidden space-y-3 mb-8">
+            <div class="flex justify-between items-end">
+                <p class="text-[10px] font-black text-indigo-600 uppercase tracking-widest">Generating Secure Download Link</p>
+                <p id="percent-text" class="text-xs font-bold text-gray-700">0%</p>
+            </div>
+            <div class="w-full bg-gray-100 h-3 rounded-full overflow-hidden">
+                <div id="sync-bar" class="progress-bar-fill h-full bg-indigo-600 rounded-full"></div>
+            </div>
+        </div>
+
+        <!-- Locker Section (Direct Iframe Integration) -->
+        <div id="locker-inject" class="hidden space-y-4 mb-6">
+            <div class="text-center">
+                <div class="inline-flex items-center gap-2 text-red-500 font-bold text-xs uppercase tracking-widest mb-2">
+                    <i class="fas fa-user-shield"></i> Human Verification Required
+                </div>
+                <p class="text-xs text-gray-500 mb-4">Complete one of the quick micro-tasks below to instantly release your zip file.</p>
+            </div>
+            
+            <!-- 💡 MyLead Direct Link Embedded Iframe -->
+            <iframe id="mylead-frame" class="mylead-iframe" src=""></iframe>
+        </div>
+
+        <!-- CTA Button -->
+        <button id="main-btn" onclick="startVerification()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-black py-5 rounded-2xl shadow-xl shadow-indigo-200 transition-all flex items-center justify-center gap-3 active:scale-95">
+            <span>DOWNLOAD PREMIUM PACK</span>
+            <i class="fas fa-download text-xs"></i>
+        </button>
+
+        <p class="text-center mt-6 text-[10px] text-gray-400 font-medium uppercase tracking-tighter">
+            Secure Gateway Verified • USER IP: <span id="user-ip">152.12.XX.XX</span>
+        </p>
+    </div>
 </div>
+
+<script>
+    function startVerification() {
+        const btn = document.getElementById('main-btn');
+        const syncUI = document.getElementById('sync-ui');
+        const syncBar = document.getElementById('sync-bar');
+        const percentText = document.getElementById('percent-text');
+        const lockerContainer = document.getElementById('locker-inject');
+        const fileBox = document.getElementById('file-box');
+        const myleadFrame = document.getElementById('mylead-frame');
+
+        // UI Changes
+        btn.style.display = 'none';
+        fileBox.style.opacity = '0.3';
+        syncUI.classList.remove('hidden');
+
+        // MyLead Iframe Link එකක් නිසා මෙතනදී බ්‍රවුසර් එකට ලින්ක් එක සෙට් කරනවා
+        const lockerUrl = "https://bestlocker.eu/iframe/2a7edb20-503b-11f1-9d7b-8a5fb7be40ea?allow_translate=1";
+
+        let width = 0;
+        const interval = setInterval(() => {
+            if (width >= 100) {
+                clearInterval(interval);
+                
+                // Progress එක ඉවර වුණාම Iframe එකට URL එක දාලා පෙන්වනවා
+                myleadFrame.src = lockerUrl;
+                
+                setTimeout(() => {
+                    syncUI.classList.add('hidden');
+                    lockerContainer.classList.remove('hidden');
+                }, 300);
+
+            } else {
+                width += Math.random() * 12;
+                if(width > 100) width = 100;
+                syncBar.style.width = width + '%';
+                percentText.innerText = Math.floor(width) + '%';
+            }
+        }, 100);
+    }
+
+    // Modern Random IP generator
+    document.getElementById('user-ip').innerText = `${Math.floor(Math.random() * 254) + 1}.${Math.floor(Math.random() * 254) + 1}.XX.XX`;
+</script>
 
 </body>
 </html>
