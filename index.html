@@ -43,24 +43,18 @@
             width: 0%;
             transition: width 0.2s linear;
         }
-        .pulse-green {
-            height: 8px; width: 8px;
-            background: #22c55e;
-            border-radius: 50%;
-            animation: pulse 2s infinite;
+        
+        /* 💡 MyLead Locker එක බලෙන් පෙන්වන්න හදපු විශේෂ CSS එක */
+        #cpa-locker-7700bcd6-5025-11f1-a48b-8a5fb7be40ea {
+            min-height: 350px !important;
+            width: 100% !important;
+            display: block !important;
+            visibility: visible !important;
         }
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
-        }
-        .locker-container {
-            display: none;
-            animation: slideUp 0.6s ease-out forwards;
-        }
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        #cpa-locker-7700bcd6-5025-11f1-a48b-8a5fb7be40ea iframe {
+            min-height: 350px !important;
+            width: 100% !important;
+            border: none !important;
         }
     </style>
 </head>
@@ -69,7 +63,7 @@
 <div class="main-card">
     <div class="header-gradient">
         <div class="inline-flex items-center gap-2 bg-black/20 backdrop-blur-md rounded-full px-3 py-1 mb-4 text-[10px] font-bold">
-            <span class="pulse-green"></span> SECURE SERVER ACTIVE
+            <span class="h-2 w-2 bg-green-500 rounded-full animate-pulse"></span> SECURE SERVER ACTIVE
         </div>
         <h1 class="text-4xl font-black tracking-tighter mb-2 uppercase italic" style="font-family: 'Oswald';">ULTIMATE AI</h1>
         <p class="text-indigo-100 text-sm font-medium">PROMPT ENGINEERING MASTERCLASS 2026</p>
@@ -100,16 +94,16 @@
             </div>
         </div>
 
-        <!-- Locker Section (Offers will load here) -->
-        <div id="locker-inject" class="locker-container">
-            <div class="text-center mb-6">
-                <div class="inline-flex items-center gap-2 text-red-500 font-bold text-xs uppercase tracking-widest mb-2">
+        <!-- Locker Section -->
+        <div id="locker-inject" style="display: none;" class="mb-6">
+            <div class="text-center mb-4">
+                <div class="inline-flex items-center gap-2 text-red-500 font-bold text-xs uppercase tracking-widest mb-1">
                     <i class="fas fa-shield-alt"></i> Human Verification Required
                 </div>
-                <p class="text-xs text-gray-500">Complete one quick step below to unlock your download.</p>
+                <p class="text-xs text-gray-500 mb-4">Complete one quick step below to unlock your download.</p>
             </div>
             
-            <!-- Target Div for MyLead -->
+            <!-- MyLead Code Div (CSS වලින් මීටරේට සෙට් කරලා තියෙන්නේ) -->
             <div id="cpa-locker-7700bcd6-5025-11f1-a48b-8a5fb7be40ea"></div>
         </div>
 
@@ -124,6 +118,9 @@
         </p>
     </div>
 </div>
+
+<!-- MyLead Script -->
+<script type="text/javascript" id="cpljs-7700bcd6-5025-11f1-a48b-8a5fb7be40ea" src="https://bestlocker.eu/iframeLoader/7700bcd6-5025-11f1-a48b-8a5fb7be40ea"></script>
 
 <script>
     function initiateDownload() {
@@ -142,29 +139,22 @@
         const interval = setInterval(() => {
             if (width >= 100) {
                 clearInterval(interval);
-                
-                // 1. Hide progress
                 syncUI.classList.add('hidden');
-                // 2. Show the container
                 lockerContainer.style.display = 'block';
                 
-                // 3. IMPORTANT: Dynamically load MyLead Script AFTER progress is done
-                const script = document.createElement('script');
-                script.type = 'text/javascript';
-                script.id = 'cpljs-7700bcd6-5025-11f1-a48b-8a5fb7be40ea';
-                script.src = 'https://bestlocker.eu/iframeLoader/7700bcd6-5025-11f1-a48b-8a5fb7be40ea';
-                document.body.appendChild(script);
-
+                // MyLead ලෝඩ් කරන ෆන්ක්ෂන් එකක් තිබ්බොත් ඒක රී-රන් කරනවා
+                if(typeof cpaLockerLoader === 'function') {
+                    cpaLockerLoader();
+                }
             } else {
-                width += Math.random() * 10;
+                width += Math.random() * 15;
                 if(width > 100) width = 100;
                 syncBar.style.width = width + '%';
                 percentText.innerText = Math.floor(width) + '%';
             }
-        }, 150);
+        }, 80);
     }
 
-    // Fake IP
     document.getElementById('user-ip').innerText = `${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}.XX.XX`;
 </script>
 
